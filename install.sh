@@ -1,10 +1,7 @@
 #!/bin/sh
 
-if test -e /bin/ghostbsd-version; then
-  PACKAGES="gh libreoffice victor-mono-ttf vscode"
-  pkg install -y ${PACKAGES}
-else
-  PACKAGES="drm-kmod firefox gh git libreoffice victor-mono-ttf vscode xorg-minimal"
-  pkg install -y ${PACKAGES}
-  echo 'kld_list="i915kms"' >> /etc/rc.conf
-fi
+PACKAGES="chromium firefox drm-kmod git gh kde5 neofetch networkmgr node npm noto onefetch plasma5-sddm-kcm ruby rubygem-bundler rubygem-debug rubygem-gems sddm sudo libreoffice victor-mono-ttf vscode xorg"
+
+pkg install -y ${PACKAGES}
+
+#echo 'kld_list="i915kms"' >> /etc/rc.conf
